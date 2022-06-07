@@ -1,7 +1,7 @@
 Pod::Spec.new do |s|
-  s.name = "HXWechatOpenSDK"
+  s.name = "WechatOpenSDK"
   s.version = "1.9.2"
-  s.summary = "HXWechatOpenSDK is a remade module framework for WeChat SDK."
+  s.summary = "WechatOpenSDK is a remade module framework for WeChat SDK."
 
   s.homepage = "https://github.com/nuomi1/NBus"
   s.license = { :type => "MIT", :file => "LICENSE" }
