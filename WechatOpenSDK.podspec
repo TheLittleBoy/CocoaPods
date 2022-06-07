@@ -22,13 +22,13 @@ Pod::Spec.new do |s|
                        DESC
 
   s.homepage         = 'https://mp.weixin.qq.com'
-  s.license          = { :type => 'MIT', :file => 'LICENSE' }
+  s.license          = { :type => 'MIT', :text => 'LICENSE' }
   s.author           = { 'TheLittleBoy' => 'wangxa@edu-edu.com.cn' }
   s.source           = { :http => 'https://res.wx.qq.com/op_res/XP2S6Df6fFmoNCdbbD14fbkHfjxvl3Q4lw61HkI79tjBQjppRTgJSmJ1cYKIXZdQh9IeX2xXCWX7AqnzuWfUvw', :type => 'zip' }
   
   s.ios.deployment_target = '9.0'
 
-  s.public_header_files = "OpenSDK1.9.2/*.h"
+  # s.public_header_files = "OpenSDK1.9.2/*.h"
   s.source_files = 'OpenSDK1.9.2/*.{h}'
   
   s.vendored_libraries  = 'OpenSDK1.9.2/*.a'
