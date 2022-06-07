@@ -1,40 +1,25 @@
-#
-# Be sure to run `pod lib lint WechatOpenSDK.podspec' to ensure this is a
-# valid spec before submitting.
-#
-# Any lines starting with a # are optional, but their use is encouraged
-# To learn more about a Podspec see https://guides.cocoapods.org/syntax/podspec.html
-#
-
 Pod::Spec.new do |s|
-  s.name             = 'WechatOpenSDK'
-  s.version          = '1.9.2'
-  s.summary          = '微信支付SDK v1.9.2'
+  s.name = "HXWechatOpenSDK"
+  s.version = "1.9.2"
+  s.summary = "HXWechatOpenSDK is a remade module framework for WeChat SDK."
 
-# This description is used to generate tags and improve search results.
-#   * Think: What does it do? Why did you write it? What is the focus?
-#   * Try to keep it short, snappy and to the point.
-#   * Write the description between the DESC delimiters below.
-#   * Finally, don't worry about the indent, CocoaPods strips it!
+  s.homepage = "https://github.com/nuomi1/NBus"
+  s.license = { :type => "MIT", :file => "LICENSE" }
+  s.author = { "nuomi1" => "nuomi1@qq.com" }
+  s.source = { :http => "https://ghcr.io/v2/nuomi1/nbus/nbuswechatsdk/blobs/sha256:3ea28f9e2e52cc3774d13e10376d55c7a2132998b26290ec7c482d77ac5f4635",
+               :flatten => false, :type => "tgz", :sha256 => "3ea28f9e2e52cc3774d13e10376d55c7a2132998b26290ec7c482d77ac5f4635",
+               :headers => ["Authorization: Bearer QQ=="] }
 
-  s.description      = <<-DESC
-  微信支付SDK v1.9.2 完整版
-                       DESC
+  s.swift_version = "5.0"
+  s.static_framework = true
 
-  s.homepage         = 'https://mp.weixin.qq.com'
-  s.license          = { :type => 'MIT', :text => 'LICENSE' }
-  s.author           = { 'TheLittleBoy' => 'wangxa@edu-edu.com.cn' }
-  s.source           = { :http => 'https://res.wx.qq.com/op_res/XP2S6Df6fFmoNCdbbD14fbkHfjxvl3Q4lw61HkI79tjBQjppRTgJSmJ1cYKIXZdQh9IeX2xXCWX7AqnzuWfUvw', :type => 'zip' }
-  
-  s.ios.deployment_target = '9.0'
+  s.ios.deployment_target = "10.0"
 
-  # s.public_header_files = "OpenSDK1.9.2/*.h"
-  s.source_files = 'OpenSDK1.9.2/*.{h}'
-  
-  s.vendored_libraries  = 'OpenSDK1.9.2/*.a'
-  s.frameworks          = 'Security', 'CoreTelephony', 'UIKit', 'CoreGraphics', 'WebKit'
-  s.libraries           = 'z', 'sqlite3.0', 'c++'
+  s.frameworks = ["CoreGraphics", "UIKit", "WebKit"]
+  s.libraries = ["c++"]
 
-  s.requires_arc = false
-  
+  s.vendored_frameworks = ["NBusWechatSDK.framework"]
+
+  s.pod_target_xcconfig = { "EXCLUDED_ARCHS[sdk=iphonesimulator*]" => "arm64" }
+  s.user_target_xcconfig = { "EXCLUDED_ARCHS[sdk=iphonesimulator*]" => "arm64" }
 end
